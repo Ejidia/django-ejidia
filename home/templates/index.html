@@ -6,9 +6,84 @@
     <title>my learners</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fa;
+    }
+
+    .navbar {
+        background-color: #343a40;
+    }
+
+    .navbar a {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        color: #ffd700;
+        text-decoration: none;
+    }
+
+    .jumbotron {
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    .jumbotron h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .jumbotron p {
+        font-size: 1.25rem;
+        margin-top: 15px;
+    }
+
+    .table {
+        margin-top: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f8f9fa;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef;
+    }
+
+    .table a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .table a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+    </style>
 </head>
-<body>
-    <h1> KARIBU GROCERIES</h1>
+<body> 
+    <nav class="p-4 bg-dark text-light d-flex justify-content-between">
+         <a href="/" class="text-light">Home</a>
+         <a href="/todo" class="text-light">TodoList</a>
+   </nav>
+   <div class="jumbotron">
+        <h1> KARIBU GROCERIES</h1>
+        <p>Our fresh sourced cereals</p>
+   </div> 
     <table class="table table_stripped table_hover">
         <thead>
             <tr>
@@ -28,6 +103,7 @@
                     <td>{{each.course}}</td>
                     <td>
                        <a href="">view</a>
+                    
                     </td>
                 </tr>
             {% endfor %}

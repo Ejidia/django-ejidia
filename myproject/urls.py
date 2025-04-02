@@ -22,6 +22,7 @@ from home.views import aboutpage
 from home.views import contactpage
 from home.views import inventorypage
 from home.views import loginpage
+from home.views import todoPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +32,6 @@ urlpatterns = [
     path('contact/', contactpage),
     path('inventory/',inventorypage),
     path('login/',loginpage),
+    path('todo/',todoPage),
     
 ]

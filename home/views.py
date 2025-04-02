@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from  home.models import TodoList
 
 # Create your views here.
 
@@ -71,5 +72,28 @@ def inventorypage(request):
 def loginpage(request):
         return render(request,"login.html")
 
-def todoPage(request):
-        return render(request, "todo.html")
+def todoPage (request):
+        if request.method == "POST":
+                data = request.POST
+                task_name = data.get('task_name')
+                description = data.get('description')
+                due_date = data.get('due_date')
+                priority = data.get('priority')
+                is_complete =data.get('is_complete')
+
+                new_task = TodoList()
+                new_task.task_name = task_name
+                new_task.description = description
+                new_task.due_date = due_date
+                new_task.priority = priority
+                new_task.is_complete = is_complete 
+                new_task.save()
+                
+        task_name = TodoList.objects.all()
+        context = { 
+                "tasks": task_name
+                }
+
+        return render(request, "todo.html", context)
+
+
